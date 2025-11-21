@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Definir variable de entorno
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+
       - name: Python version
         run: python --version
 
