@@ -1,0 +1,9 @@
+name: Hello World Workflow
+on: [push, pull_request]
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World from Python
+        run: python main.py
