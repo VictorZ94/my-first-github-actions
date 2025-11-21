@@ -1,9 +1,24 @@
-name: Hello World Workflow
+name: Hello-World
 on: [push, pull_request]
 
 jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
+      - name: Public IP
+        id: ip
+        uses: haythem/public-ip@v1.3
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Python version
+        run: python --version
+
       - name: Print Hello World from Python
         run: python main.py
